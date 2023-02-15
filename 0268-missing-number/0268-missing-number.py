@@ -4,8 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        j=len(nums)
-        summ=j*(j+1)/2
+        summ=len(nums)*(len(nums)+1)/2
         for i in nums:
             summ-=i
         return summ
