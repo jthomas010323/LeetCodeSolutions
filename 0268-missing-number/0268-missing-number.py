@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         j=len(nums)
-        summ=j*(j+1)//2
+        summ=j*(j+1)/2
         for i in nums:
             summ-=i
         return summ
