@@ -1,27 +1,16 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var detectCycle = function(head) {
-    const cycleSet=new Set();
-    if(!head)
-        return null
-    while(head.next){
-        if(cycleSet.has(head))
-            return head
-        else{
-        cycleSet.add(head);
-        head=head.next;
+const detectCycle = (head) => {
+    let node = head
+ 
+    while (node){
+        if(node.visited){
+            delete node.visited
+            return node 
+        }else{
+            node.visited = true
+            node=node.next
         }
     }
-    return null
+
+  return null
     
 };
