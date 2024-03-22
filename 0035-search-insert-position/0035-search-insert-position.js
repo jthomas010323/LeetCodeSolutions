@@ -4,18 +4,21 @@
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-    const findIt = nums.findIndex(x => x === target);
-    if (findIt !== -1) return findIt;
-
-    let count = nums.length;
-    for (let i; (i = nums.pop()); ) {
-        if (i > target) {
-            count--;
-            continue;
-        } else {
-            return count; 
+    let l = 0
+    let h = nums.length-1
+    let m = 0
+    while(l<=h){
+        let m = Math.floor((l+h)/2)
+        if(nums[m]==target){
+            return m
         }
+        if(nums[m]<target){
+            l=m+1
+        }
+        else{
+            h=m-1
+        }
+        console.log(l, h)
     }
-
-    return 0;
+    return l
 };
