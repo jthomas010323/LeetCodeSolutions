@@ -18,7 +18,7 @@ var searchInsert = function(nums, target) {
         else{
             h=m-1
         }
-        console.log(m)
+        
     }
     return l
 };
